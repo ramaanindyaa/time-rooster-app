@@ -37,7 +37,6 @@
     "whatwg-fetch": "^3.6.2"
   },
   "dependencies": {
-    "node-router": "^1.0.0",
     "regenerator-runtime": "^0.13.11"
   }
 }
