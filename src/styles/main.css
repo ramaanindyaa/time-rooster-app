@@ -1,5 +1,4 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Playfair+Display:wght@400;900&display=swap');*/
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap');
 /* Website Theme  */
 
 :root{
@@ -17,6 +16,10 @@
     --heading-color: hsl(var(--hue-1), 61%, 24%);
     --text-color: hsl(var(--hue-1), 17%, 63%);
     --section-padding: 7rem;
+}
+
+html {
+  font-family: 'Lato', sans-serif;
 }
 
 body {
@@ -49,7 +52,6 @@ section {
 
 body{
     background-color: var(--bg-color);
-    font-family: 'Libre Baskerville', serif;
 }
 
 ::selection{
@@ -134,7 +136,6 @@ body{
 }
 
 .logo{
-  font-family: 'Playfair Display', serif;
   font-weight: 900;
   color: var(--heading-color);
   letter-spacing: 1px;
