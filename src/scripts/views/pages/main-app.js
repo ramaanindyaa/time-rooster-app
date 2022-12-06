@@ -1,15 +1,9 @@
-function setCalendarNav(date = null){
-  date = date ? new Date(date) : new Date();
-  document.querySelector('.calendar-nav button.prev').addEventListener('click', () => drawCalendar(date.setMonth(date.getMonth()-1), '#calendar-box'));
-  document.querySelector('.calendar-nav button.next').addEventListener('click', () => drawCalendar(date.setMonth(date.getMonth()+1), '#calendar-box'));
-}
-
-function drawCalendar(date = null, element = null){
+function drawCalendar(date = null, element = null) {
   date = date ? new Date(date) : new Date();
   const year = date.getFullYear();
   const arrayDayName = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
   const monthName = date.toLocaleString('id-ID', { month: 'long' });
-  const monthNumber = new Date(year, date.getMonth()+1, 0).getDate();
+  const monthNumber = new Date(year, date.getMonth() + 1, 0).getDate();
   const startDay = new Date(year, date.getMonth(), 1).toLocaleDateString('id-ID', { weekday: 'long' });
   const startWeek = arrayDayName.indexOf(startDay);
 
@@ -20,31 +14,37 @@ function drawCalendar(date = null, element = null){
       <button class="next">&gt;</button>
     </div>`;
 
-  output += `<div class="calendar-month">`;
+  output += '<div class="calendar-month">';
 
-  for (var i = 0; i < arrayDayName.length; i++) {
-    output += `<span class="week-name">${arrayDayName[i].substring(0,3)}</span>`;
-  }
-  
-  for (var i = 0; i < startWeek; i++) {
-      output +=  `<span class="day-item-disabled"></span>`;
+  for (let i = 0; i < arrayDayName.length; i += 1) {
+    output += `<span class="week-name">${arrayDayName[i].substring(0, 3)}</span>`;
   }
 
-  for (var i = 1; i <= monthNumber; i++) {
-    output +=  `<span class="day-item">${i}</span>`;
+  for (let i = 0; i < startWeek; i += 1) {
+    output += '<span class="day-item-disabled"></span>';
   }
 
-  output += `</div>`;
+  for (let i = 1; i <= monthNumber; i += 1) {
+    output += `<span class="day-item">${i}</span>`;
+  }
 
-  if(element){
+  output += '</div>';
+
+  if (element) {
     document.querySelector(element).innerHTML = output;
     setCalendarNav(date);
-    return;
   } else {
     return output;
   }
 }
 
+function setCalendarNav(date = null) {
+  date = date ? new Date(date) : new Date();
+  document.querySelector('.calendar-nav button.prev')
+    .addEventListener('click', () => drawCalendar(date.setMonth(date.getMonth() - 1), '#calendar-box'));
+  document.querySelector('.calendar-nav button.next')
+    .addEventListener('click', () => drawCalendar(date.setMonth(date.getMonth() + 1), '#calendar-box'));
+}
 
 const MainApp = {
 
@@ -97,7 +97,6 @@ const MainApp = {
         <h2>Main App Page</h2>
         <div id="calendar-box">
           ${drawCalendar()}
-          ${drawCalendar('2010-01')}
         </div>
       </div>
       `;
