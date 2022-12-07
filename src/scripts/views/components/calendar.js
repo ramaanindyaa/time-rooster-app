@@ -1,12 +1,17 @@
+import CalendarBox from './calendar-template';
+
 class Calendar extends HTMLElement {
   connectedCallback() {
     this.render();
   }
 
-  render() {
+  async render() {
     this.innerHTML = /* HTML */`
     <h3>Calendar Element</h3>
+    ${await CalendarBox.render()}
     `;
+
+    await CalendarBox.afterRender();
   }
 }
 

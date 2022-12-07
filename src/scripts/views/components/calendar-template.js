@@ -1,6 +1,6 @@
-import drawCalendar from './draw-calendar';
+import { drawCalendar, setCalendarNav } from './draw-calendar';
 
-const Calendar = {
+const CalendarBox = {
   async render() {
     return /* HTML */ `
     <style>
@@ -29,6 +29,15 @@ const Calendar = {
         cursor:pointer
       }
 
+      .calendar-header span{
+        cursor:pointer;
+        color:var(--main-color-1);
+      }
+
+      .calendar-header span:hover {
+        opacity:.8
+      }
+
       .calendar-month {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
@@ -37,6 +46,7 @@ const Calendar = {
       }
       
       .calendar-month .day-item {
+        cursor:pointer;
         background-color: #ccc;
         border-radius: 100%;
         width: 2rem;
@@ -48,7 +58,7 @@ const Calendar = {
       <div class="main-app-box">
         <h2>Main App Page</h2>
         <div id="calendar-box">
-          ${drawCalendar()}
+          ${await drawCalendar()}
         </div>
       </div>
     `;
@@ -56,7 +66,8 @@ const Calendar = {
 
   async afterRender() {
     // Add Function Here
+    await setCalendarNav();
   },
 };
 
-export default Calendar;
+export default CalendarBox;
