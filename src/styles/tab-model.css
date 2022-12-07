@@ -1,0 +1,19 @@
+tab-group {
+  background: red;
+}
+
+tab-title-list {
+  background-color: green;
+}
+
+tab-title {
+  background-color: blue;
+}
+
+tab-content-list{
+  background-color: purple;
+}
+
+tab-content {
+  background-color: aqua;
+}
