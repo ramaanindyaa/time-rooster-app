@@ -1,25 +1,31 @@
 import '../components/content-tab';
 import '../components/user-detail';
 import '../components/sign-in-alert';
+import { getUserState } from '../../utils/sign-in-helper';
 
-const user = 1;
 const MainApp = {
   async render() {
-    if (user === false) {
+    const renderElement = await this.stateWatcher();
+    return renderElement;
+  },
+
+  async afterRender() {
+    // Fungsi ini akan dipanggil setelah render()
+  },
+
+  async stateWatcher() {
+    console.log(getUserState());
+    if (getUserState()) {
       return /* HTML */`
-      <sign-in-alert></sign-in-alert>
-      `;
-    }
-    return /* HTML */`
       <div class="main-app-content">
         <content-tab></content-tab>
         <user-detail></user-detail>
       </div>
       `;
-  },
-
-  async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
+    }
+    return /* HTML */`
+    <sign-in-alert></sign-in-alert>
+    `;
   },
 };
 
