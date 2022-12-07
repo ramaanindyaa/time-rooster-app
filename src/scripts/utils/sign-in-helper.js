@@ -5,7 +5,7 @@ import {
 } from 'firebase/auth';
 import { firebaseAuth } from './initialize-firebase';
 
-const createLoginProvider = () => {
+const _createLoginProvider = () => {
   // Use GoogleAuth as Login method
   const loginProvider = new GoogleAuthProvider();
   loginProvider.addScope('https://www.googleapis.com/auth/contacts.readonly');
@@ -16,7 +16,7 @@ const createLoginProvider = () => {
 const signInHelper = (signInBtn) => {
   signInBtn.addEventListener('click', (e) => {
     e.stopPropagation();
-    signInWithPopup(firebaseAuth, createLoginProvider());
+    signInWithPopup(firebaseAuth, _createLoginProvider());
   });
 };
 
