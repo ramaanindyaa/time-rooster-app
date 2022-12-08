@@ -27,11 +27,6 @@ const signOutHelper = (signOutBtn) => {
   });
 };
 
-const getUserState = () => {
-  const userState = firebaseAuth.currentUser;
-  return userState;
-};
-
 export {
-  signInHelper, signOutHelper, getUserState,
+  signInHelper, signOutHelper,
 };

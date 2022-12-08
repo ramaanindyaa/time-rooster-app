@@ -4,6 +4,7 @@ import { getAuth } from 'firebase/auth';
 const config = {
   apiKey: 'AIzaSyDnwmikQnHOH441QwAEEMGGjog-YiEQ7hU',
   authDomain: 'time-roster.firebaseapp.com',
+  databaseURL: 'https://time-roster-default-rtdb.asia-southeast1.firebasedatabase.app',
   projectId: 'time-roster',
   storageBucket: 'time-roster.appspot.com',
   messagingSenderId: '1068238494351',
@@ -13,4 +14,13 @@ const config = {
 const firebaseApp = initializeApp(config);
 const firebaseAuth = getAuth(firebaseApp);
 
-export { firebaseApp, firebaseAuth };
+function getCurrentUser() {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = firebaseAuth.onAuthStateChanged((user) => {
+      unsubscribe();
+      resolve(user);
+    }, reject);
+  });
+}
+
+export { firebaseApp, firebaseAuth, getCurrentUser };
