@@ -1,21 +1,11 @@
 import '../components/content-tab';
 import '../components/user-detail';
 import '../components/sign-in-alert';
-import { getUserState } from '../../utils/sign-in-helper';
+import { getAllTasks } from '../../utils/database-helper';
 
 const MainApp = {
   async render() {
-    const renderElement = await this.stateWatcher();
-    return renderElement;
-  },
-
-  async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
-  },
-
-  async stateWatcher() {
-    console.log(getUserState());
-    if (getUserState()) {
+    if (true) {
       return /* HTML */`
       <div class="main-app-content">
         <content-tab></content-tab>
@@ -26,6 +16,11 @@ const MainApp = {
     return /* HTML */`
     <sign-in-alert></sign-in-alert>
     `;
+  },
+
+  async afterRender() {
+    // Fungsi ini akan dipanggil setelah render()
+    getAllTasks();
   },
 };
 
