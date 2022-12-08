@@ -30,7 +30,7 @@ function drawCalendar(strDate = null, element = null) {
   }
 
   for (let i = 1; i <= monthNumber; i += 1) {
-    output += `<span class="day-item" data-date="${formatDateYearMonth(date)}-${i}">${i}</span>`;
+    output += `<span class="day-item" data-date="${formatDateYearMonth(date)}-${i.padStart(2, '0')}">${i}</span>`;
   }
 
   output += '</div>';
