@@ -56,7 +56,6 @@ const CalendarBox = {
       </style>
 
       <div class="main-app-box">
-        <h2>Main App Page</h2>
         <div id="calendar-box">
           ${await drawCalendar()}
         </div>
