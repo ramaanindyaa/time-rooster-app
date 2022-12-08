@@ -1,0 +1,22 @@
+four-q {
+	background: red;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 10px;
+}
+
+task-item {
+	background-color: #8989ca;
+}
+
+.important.urgent {
+  color: yellow;
+}
+
+.important {
+  color: blue
+}
+
+.urgent {
+  color: white;
+}
