@@ -1,20 +1,44 @@
 four-q {
-	background: red;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 10px;
 }
 
-task-item {
-	background-color: #8989ca;
+.four-q-title {
+	grid-column: span 2;
+	display: flex;
+	justify-content: space-between;
+}
+
+/* Four Quadrant grid */
+.four-q-grid-title {
+	text-align: center;
+}
+
+four-q > #do {
+	background-color: #FFAB40;
+}
+
+four-q > #schedule {
+	background-color: #78BFE3;
+}
+
+four-q > #delegate {
+	background-color: #3A4454;
+	color: whitesmoke;
+}
+
+four-q > #eliminate {
+	background-color: #000000;
+	color: whitesmoke;
 }
 
 .important.urgent {
-  color: yellow;
+	color: red;
 }
 
 .important {
-  color: blue
+	color: blue;
 }
 
 .urgent {
