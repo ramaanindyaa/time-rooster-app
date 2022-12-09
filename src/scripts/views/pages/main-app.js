@@ -2,10 +2,12 @@ import '../components/content-tab';
 import '../components/user-detail';
 import '../components/sign-in-alert';
 import { getAllTasks } from '../../utils/database-helper';
+import { getCurrentUser } from '../../utils/initialize-firebase';
 
 const MainApp = {
   async render() {
-    if (true) {
+    const user = await getCurrentUser();
+    if (user) {
       return /* HTML */`
       <div class="main-app-content">
         <content-tab></content-tab>
