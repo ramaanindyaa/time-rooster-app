@@ -45,8 +45,9 @@ class FourQ extends HTMLElement {
     const addTaskBtn = document.getElementById('add_task');
     addTaskBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      taskManipulation.addTask();
+      taskManipulation.taskInputForm();
     });
+    console.log(this._tasks);
 
     const doElement = document.getElementById('do');
     const scheduleElement = document.getElementById('schedule');
@@ -56,7 +57,7 @@ class FourQ extends HTMLElement {
     Object.keys(this._tasks || {}).forEach((task) => {
       const taskItemElement = document.createElement('task-item');
       taskItemElement.task = this._tasks[task];
-      taskItemElement.taskKey = task;
+      taskItemElement.taskId = task;
       if (this._tasks[task].importance && this._tasks[task].urgency) {
         doElement.appendChild(taskItemElement);
       } else if (this._tasks[task].importance) {

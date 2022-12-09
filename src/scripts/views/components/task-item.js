@@ -1,4 +1,4 @@
-import { openTask } from '../../utils/database-helper';
+import taskManipulation from '../../utils/task-manipulation';
 
 class TaskItem extends HTMLElement {
   // connectedCallback() {
@@ -12,8 +12,8 @@ class TaskItem extends HTMLElement {
     this.afterRender();
   }
 
-  set taskKey(taskKey) {
-    this._taskKey = taskKey;
+  set taskId(taskId) {
+    this._taskId = taskId;
   }
 
   render() {
@@ -38,9 +38,9 @@ class TaskItem extends HTMLElement {
 
     this.addEventListener('click', (e) => {
       e.stopPropagation();
-      console.log(`${this._task.name}`);
-      console.log(`${this._taskKey}`);
-      openTask(this._taskKey);
+      // console.log(`${this._task.name}`);
+      // console.log(`${this._taskId}`);
+      taskManipulation.editTask(this._taskId, this._task);
     });
   }
 }
