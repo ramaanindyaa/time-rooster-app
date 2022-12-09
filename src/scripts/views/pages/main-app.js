@@ -2,7 +2,6 @@ import '../components/content-tab';
 import '../components/user-detail';
 import '../components/sign-in-alert';
 import 'regenerator-runtime';
-import { getAllTasks } from '../../utils/database-helper';
 import { getCurrentUser } from '../../utils/initialize-firebase';
 
 const MainApp = {
@@ -23,7 +22,6 @@ const MainApp = {
 
   async afterRender() {
     // Fungsi ini akan dipanggil setelah render()
-    getAllTasks();
   },
 };
 

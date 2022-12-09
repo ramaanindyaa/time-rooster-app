@@ -1,4 +1,5 @@
 import 'native-html-tabs';
+import { getAllTasks } from '../../utils/database-helper';
 import './calendar';
 import './four-q';
 import './task-list';
@@ -6,6 +7,7 @@ import './task-list';
 class ContentTab extends HTMLElement {
   connectedCallback() {
     this.render();
+    getAllTasks();
   }
 
   render() {

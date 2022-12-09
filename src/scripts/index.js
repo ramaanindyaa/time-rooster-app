@@ -1,6 +1,8 @@
+import { onAuthStateChanged } from 'firebase/auth';
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
 import '../styles/responsive.css';
+import { firebaseAuth } from './utils/initialize-firebase';
 import App from './views/app';
 
 const app = new App({
@@ -14,5 +16,10 @@ window.addEventListener('hashchange', () => {
 });
 
 window.addEventListener('load', () => {
-  app.renderPage();
+  onAuthStateChanged(firebaseAuth, (user) => {
+    if (user) {
+      app.renderPage();
+    }
+    app.renderPage();
+  });
 });

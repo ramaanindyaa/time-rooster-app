@@ -8,7 +8,7 @@ class FourQ extends HTMLElement {
     this.afterRender();
   }
 
-  render() {
+  async render() {
     this.innerHTML = /* HTML */ `
     <div class="four-q-title">
       <h2 >Four Quadrant</h2>
@@ -41,7 +41,7 @@ class FourQ extends HTMLElement {
     `;
   }
 
-  afterRender() {
+  async afterRender() {
     const addTaskBtn = document.getElementById('add_task');
     addTaskBtn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -68,11 +68,6 @@ class FourQ extends HTMLElement {
         eliminateElement.appendChild(taskItemElement);
       }
     });
-  }
-
-  renderError(message) {
-    this.innerHTML = '<h3>Four Quadrant</h3>';
-    this.innerHTML += `<h3 class="placeholder">${message}</h2>`;
   }
 }
 

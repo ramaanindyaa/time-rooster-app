@@ -23,7 +23,8 @@ const signInHelper = (signInBtn) => {
 const signOutHelper = (signOutBtn) => {
   signOutBtn.addEventListener('click', async (e) => {
     e.stopPropagation();
-    await signOut(firebaseAuth);
+    // eslint-disable-next-line no-restricted-globals
+    await signOut(firebaseAuth).then(location.reload());
   });
 };
 
