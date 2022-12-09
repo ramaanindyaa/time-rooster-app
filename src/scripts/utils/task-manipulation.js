@@ -1,4 +1,5 @@
 import Swal from 'sweetalert2';
+import { pushTask } from './database-helper';
 
 const _createTaskObject = () => {
   const id = new Date().toISOString();
@@ -54,7 +55,7 @@ const taskManipulation = {
       `,
       focusConfirm: false,
       preConfirm: () => [
-        _createTaskObject(),
+        pushTask(_createTaskObject()),
       ],
     });
 

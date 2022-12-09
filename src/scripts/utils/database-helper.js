@@ -1,5 +1,5 @@
 import {
-  getDatabase, onValue, ref,
+  getDatabase, onValue, push, ref, set,
 } from 'firebase/database';
 import { firebaseApp, getCurrentUser } from './initialize-firebase';
 
@@ -28,6 +28,11 @@ const getAllTasks = async () => {
 };
 
 // TODO: Complete these 2 Function
+const pushTask = async (task) => {
+  const userTasksRef = await _getTasksRef();
+  set(push(userTasksRef, task));
+};
+
 const openTask = async (taskId) => {
   const task = await _getTaskRef(taskId);
   console.log(task);
@@ -38,4 +43,4 @@ const openTask = async (taskId) => {
 //   update(taskRef, /* putobjecthere */);
 // };
 
-export { getAllTasks, openTask };
+export { getAllTasks, pushTask, openTask };

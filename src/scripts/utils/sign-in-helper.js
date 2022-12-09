@@ -14,16 +14,16 @@ const _createLoginProvider = () => {
 };
 
 const signInHelper = (signInBtn) => {
-  signInBtn.addEventListener('click', (e) => {
+  signInBtn.addEventListener('click', async (e) => {
     e.stopPropagation();
-    signInWithPopup(firebaseAuth, _createLoginProvider());
+    await signInWithPopup(firebaseAuth, _createLoginProvider());
   });
 };
 
 const signOutHelper = (signOutBtn) => {
-  signOutBtn.addEventListener('click', (e) => {
+  signOutBtn.addEventListener('click', async (e) => {
     e.stopPropagation();
-    signOut(firebaseAuth);
+    await signOut(firebaseAuth);
   });
 };
 
