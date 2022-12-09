@@ -7,8 +7,10 @@ class signInAlert extends HTMLElement {
 
   render() {
     this.innerHTML = /* HTML */`
+    <section id="sign-in-box">
     <h3>Please Sign In Before Using The App</h3>
     <button id="sign-in">Sign In</button>
+    </section>
     `;
 
     const signInBtn = document.getElementById('sign-in');

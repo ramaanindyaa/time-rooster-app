@@ -16,21 +16,19 @@ four-q {
 }
 
 four-q > #do {
-	background-color: #FFAB40;
+	background-color: #7ed957;
 }
 
 four-q > #schedule {
-	background-color: #78BFE3;
+	background-color: #38b6ff;
 }
 
 four-q > #delegate {
-	background-color: #3A4454;
-	color: whitesmoke;
+	background-color: #ff914d;
 }
 
 four-q > #eliminate {
-	background-color: #000000;
-	color: whitesmoke;
+	background-color: #ff3a3a;
 }
 
 .important.urgent {
@@ -44,3 +42,7 @@ four-q > #eliminate {
 .urgent {
   color: white;
 }
+
+.quadrant {
+	padding: .5rem;
+  }

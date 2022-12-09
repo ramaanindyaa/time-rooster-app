@@ -14,25 +14,25 @@ class FourQ extends HTMLElement {
       <h2 >Four Quadrant</h2>
       <button id="add_task">Add Task</button>
     </div>
-    <div id="do">
+    <div class="quadrant" id="do">
       <div class='four-q-grid-title'> 
         <h3>Important and Urgent</h3>
         <p>Do it Now !</p>
       </div>
     </div>
-    <div id="schedule">
+    <div class="quadrant" id="schedule">
       <div class='four-q-grid-title'> 
         <h3>Important</h3>
         <p>Scheduled it !</p>
       </div>
     </div>
-    <div id="delegate">
+    <div class="quadrant" id="delegate">
       <div class='four-q-grid-title'> 
         <h3>Urgent</h3>
         <p>Delegate it !</p>
       </div>
     </div>
-    <div id="eliminate">
+    <div class="quadrant" id="eliminate">
       <div class='four-q-grid-title'> 
         <h3>Not Important and Not Urgent</h3>
         <p>Eliminate it if possible !</p>
