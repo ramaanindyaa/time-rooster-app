@@ -31,16 +31,12 @@ four-q > #eliminate {
 	background-color: #ff3a3a;
 }
 
-.important.urgent {
-	color: red;
-}
-
-.important {
-	color: blue;
-}
-
-.urgent {
-  color: white;
+task-item {
+	display: block;
+	background-color: rgba(255, 255, 255, 0.5);
+	padding: .5rem;
+	border-radius: .4rem;
+	margin: .25rem 0;
 }
 
 .quadrant {
