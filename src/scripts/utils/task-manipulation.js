@@ -20,10 +20,6 @@ const _createTaskObject = () => {
     dateAdded,
   };
 
-  if (taskObject.name === '') {
-    console.log('task has no name');
-    return null;
-  }
   return (JSON.parse(JSON.stringify(taskObject)));
 };
 
@@ -54,8 +50,8 @@ const taskManipulation = {
         </div>
       `,
       focusConfirm: false,
-      preConfirm: () => [
-        pushTask(_createTaskObject()),
+      preConfirm: async () => [
+        await pushTask(_createTaskObject()),
       ],
     });
   },

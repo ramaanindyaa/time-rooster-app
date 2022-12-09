@@ -8,6 +8,7 @@ const db = getDatabase(firebaseApp);
 const _getTasksRef = async () => {
   const user = await getCurrentUser();
   const userTasksRef = ref(db, `user/${user.uid}/tasks/`);
+  console.log(userTasksRef);
   return userTasksRef;
 };
 

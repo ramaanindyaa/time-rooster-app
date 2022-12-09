@@ -53,7 +53,7 @@ class FourQ extends HTMLElement {
     const delegateElement = document.getElementById('delegate');
     const eliminateElement = document.getElementById('eliminate');
 
-    Object.keys(this._tasks).forEach((task) => {
+    Object.keys(this._tasks || {}).forEach((task) => {
       const taskItemElement = document.createElement('task-item');
       taskItemElement.task = this._tasks[task];
       taskItemElement.taskKey = task;
