@@ -8,7 +8,6 @@ const db = getDatabase(firebaseApp);
 const _getTasksRef = async () => {
   const user = await getCurrentUser();
   const userTasksRef = ref(db, `user/${user.uid}/tasks/`);
-  console.log(userTasksRef);
   return userTasksRef;
 };
 
@@ -31,12 +30,21 @@ const getAllTasks = async () => {
 // TODO: Complete these 2 Function
 const pushTask = async (task) => {
   const userTasksRef = await _getTasksRef();
-  set(push(userTasksRef, task));
+  try {
+    set(push(userTasksRef, task));
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-const openTask = async (taskId) => {
-  const task = await _getTaskRef(taskId);
-  console.log(task);
+const setTask = async (taskId, task) => {
+  const userTasksRef = await _getTaskRef(taskId);
+  const taskData = userTasksRef;
+  try {
+    await set(taskData, task);
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 // const updateTask = async (taskId) => {
@@ -44,4 +52,4 @@ const openTask = async (taskId) => {
 //   update(taskRef, /* putobjecthere */);
 // };
 
-export { getAllTasks, pushTask, openTask };
+export { getAllTasks, pushTask, setTask };
