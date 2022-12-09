@@ -24,12 +24,12 @@ const _createTaskObject = () => {
     console.log('task has no name');
     return null;
   }
-  return (taskObject);
+  return (JSON.parse(JSON.stringify(taskObject)));
 };
 
 const taskManipulation = {
   async addTask() {
-    const { value: formValues } = await Swal.fire({
+    await Swal.fire({
       title: 'Input Task',
       html: /* HTML */ `
         <div class="form-element">
@@ -58,10 +58,6 @@ const taskManipulation = {
         pushTask(_createTaskObject()),
       ],
     });
-
-    if (formValues) {
-      console.log(formValues);
-    }
   },
 };
 
