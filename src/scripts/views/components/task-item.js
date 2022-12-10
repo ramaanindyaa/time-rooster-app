@@ -18,8 +18,10 @@ class TaskItem extends HTMLElement {
 
   render() {
     this.innerHTML = /* HTML */`
+    <button>
     <h4>${this._task.name}</h4>
     <p>Scheduled at: ${this._task.schedule}</p>
+    </button>
     `;
   }
 

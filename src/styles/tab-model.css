@@ -21,6 +21,17 @@ tab-content {
   border-radius: .5rem;
 }
 
+tab-title button {
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1rem;
+  font-family: 'Lato';
+  border-radius: .4rem;
+  margin: .25rem 0;
+	cursor: pointer;
+}
+
 user-detail {
   background-color: #fff;
   border-radius: .5rem;
