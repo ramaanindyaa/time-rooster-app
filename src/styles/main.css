@@ -800,3 +800,13 @@ header.scrolled .logo {
   margin: 1rem 0;
   padding: 0.5rem 2rem;
 }
+
+.quadrant-info {
+  border: none;
+  background: none;
+  font-size: larger;
+  font-weight: 100;
+  float: right;
+  min-width: 44px;
+  cursor: pointer;
+}
