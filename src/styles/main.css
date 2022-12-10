@@ -794,19 +794,10 @@ header.scrolled .logo {
   padding: 0.5rem;
   background: var(--main-color-1);
   color: #fff;
+  cursor: pointer;
 }
 
 #sign-in-box button {
   margin: 1rem 0;
   padding: 0.5rem 2rem;
-}
-
-.quadrant-info {
-  border: none;
-  background: none;
-  font-size: larger;
-  font-weight: 100;
-  float: right;
-  min-width: 44px;
-  cursor: pointer;
 }
