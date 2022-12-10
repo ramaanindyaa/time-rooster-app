@@ -1,14 +1,16 @@
+import { getCurrentUser } from '../../utils/initialize-firebase';
 import { signOutHelper } from '../../utils/sign-in-helper';
 
 class UserDetail extends HTMLElement {
-  connectedCallback() {
-    this.render();
+  async connectedCallback() {
+    const user = await getCurrentUser();
+    this.render(user);
   }
 
-  render() {
+  render(user) {
     this.innerHTML = /* HTML */`
     <h3>User Detail</h3>
-    <h4>Username</h4>
+    <h4>${user.displayName}</h4>
     <button id="sign-out">Sign Out</button>
     `;
 
