@@ -1,11 +1,6 @@
 import taskManipulation from '../../utils/task-manipulation';
 
 class TaskItem extends HTMLElement {
-  // connectedCallback() {
-  //   this.render();
-  //   this.afterRender();
-  // }
-
   set task(task) {
     this._task = task;
     this.render();
@@ -18,14 +13,12 @@ class TaskItem extends HTMLElement {
 
   render() {
     this.innerHTML = /* HTML */`
-    <button>
     <h4>${this._task.name}</h4>
-    <p>Scheduled at: ${this._task.schedule}</p>
-    </button>
     `;
   }
 
   afterRender() {
+    // Add classes for certain condition
     if (this._task.importance) {
       this.classList.add('important');
     }
@@ -38,10 +31,13 @@ class TaskItem extends HTMLElement {
       this.classList.add('eliminate');
     }
 
+    // Remove [Scheduled at:] from being rendered if its empty
+    if (this._task.schedule) {
+      this.innerHTML += `<p>Scheduled at: ${this._task.schedule}</p>`;
+    }
+
     this.addEventListener('click', (e) => {
       e.stopPropagation();
-      // console.log(`${this._task.name}`);
-      // console.log(`${this._taskId}`);
       taskManipulation.editTask(this._taskId, this._task);
     });
   }

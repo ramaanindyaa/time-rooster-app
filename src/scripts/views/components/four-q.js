@@ -16,28 +16,36 @@ class FourQ extends HTMLElement {
       <button id="add_task">Add Task</button>
     </div>
     <div class="quadrant" id="do">
-    <button id="info-do" class="quadrant-info">🛈</button>
+    <button id="info-do" class="quadrant-info">
+      <i class="fa fa-info-circle" aria-hidden="true"></i>
+    </button>
       <div class='four-q-grid-title'> 
         <h3>Important and Urgent</h3>
         <p>Do it Now !</p>
       </div>
     </div>
     <div class="quadrant" id="schedule">
-    <button id="info-schedule" class="quadrant-info">🛈</button>
+    <button id="info-schedule" class="quadrant-info">
+      <i class="fa fa-info-circle" aria-hidden="true"></i>
+    </button>
       <div class='four-q-grid-title'> 
         <h3>Important</h3>
         <p>Scheduled it !</p>
       </div>
     </div>
     <div class="quadrant" id="delegate">
-      <button id="info-delegate" class="quadrant-info">🛈</button>
+      <button id="info-delegate" class="quadrant-info">
+        <i class="fa fa-info-circle" aria-hidden="true"></i>
+      </button>
       <div class='four-q-grid-title'> 
         <h3>Urgent</h3>
         <p>Delegate it !</p>
       </div>
     </div>
     <div class="quadrant" id="eliminate">
-      <button id="info-eliminate" class="quadrant-info">🛈</button>
+      <button id="info-eliminate" class="quadrant-info">
+        <i class="fa fa-info-circle" aria-hidden="true"></i>
+      </button>
       <div class='four-q-grid-title'> 
         <h3>Not Important and Not Urgent</h3>
         <p>Eliminate it if possible !</p>
@@ -52,7 +60,6 @@ class FourQ extends HTMLElement {
       e.stopPropagation();
       taskManipulation.taskInputForm();
     });
-    console.log(this._tasks);
 
     const doElement = document.getElementById('do');
     const scheduleElement = document.getElementById('schedule');
@@ -74,6 +81,11 @@ class FourQ extends HTMLElement {
       }
     });
 
+    const doChildElement = doElement.childElementCount - 2;
+    if (doChildElement > 2) {
+      doElement.classList.add('warning');
+    }
+
     document.querySelectorAll('.quadrant-info').forEach((element) => {
       element.addEventListener('click', () => {
         switch (element.getAttribute('id')) {
@@ -81,7 +93,7 @@ class FourQ extends HTMLElement {
             Swal.fire(
               'Kuadran 1',
               'Kuadran satu dipenuhi dengan aktivitas yang sangat mendesak dan penting atau aktivitas yang harus diselesaikan pada waktu yang sangat dekat. Bila aktivitas pada kuadran I tidak dikerjakan sesegera mungkin, akan mendatangkan masalah di kemudian hari.',
-              'info',
+
             );
             break;
           case 'info-delegate':

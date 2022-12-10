@@ -1,5 +1,5 @@
 import Swal from 'sweetalert2';
-import { pushTask, setTask } from './database-helper';
+import { pushTask, removeTask, setTask } from './database-helper';
 
 const _createTaskObject = () => {
   const id = new Date().toISOString();
@@ -50,7 +50,7 @@ const _updateTaskObject = (task) => {
     dateAdded,
   };
 
-  return (JSON.parse(JSON.stringify(taskObject)));
+  return (taskObject);
 };
 
 const taskManipulation = {
@@ -80,13 +80,12 @@ const taskManipulation = {
         </div>
       `,
       focusConfirm: false,
-      preConfirm: async () => {
-        try {
-          pushTask(_createTaskObject());
-        } catch (error) {
-          console.log(error);
-        }
-      },
+      showCloseButton: true,
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        await pushTask(_createTaskObject())
+          .then(Swal.fire('Edited!', '', 'success'));
+      }
     });
   },
 
@@ -103,11 +102,11 @@ const taskManipulation = {
           <textarea id="task_detail" class="swal2-textarea" aria-label="Type your task detail here">${task.detail}</textarea>
         </div>
         <div class="form-element">
-          <input id="task_importance" type="checkbox" checked="${task.importance}">
+          <input id="task_importance" type="checkbox" ${task.importance ? 'checked' : ''}>
           <label for="task_importance" class="swal2-label">Is this Task Important?</label>
         </div>
         <div class="form-element">
-          <input id="task_urgency" type="checkbox" checked="${task.urgency}">
+          <input id="task_urgency" type="checkbox" ${task.urgency ? 'checked' : ''}>
           <label for="task_urgency" class="swal2-label">Is this Task Urgent?</label>
         </div>
         <div class="form-element">
@@ -116,14 +115,18 @@ const taskManipulation = {
         </div>
       `,
       focusConfirm: false,
-      preConfirm: async () => {
-        try {
-          setTask(taskId, _updateTaskObject(task));
-        } catch (error) {
-          console.log(error);
-        }
+      showCloseButton: true,
+      showDenyButton: true,
+      denyButtonText: '<i class="fa fa-trash " aria-hidden="true"></i>',
+      confirmButtonText: '<i class="fa fa-check " aria-hidden="true"></i>',
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        await setTask(taskId, _updateTaskObject(task))
+          .then(Swal.fire('Edited!', '', 'success'));
+      } else if (result.isDenied) {
+        await removeTask(taskId)
+          .then(Swal.fire('Deleted!', '', 'success'));
       }
-      ,
     });
   },
 };

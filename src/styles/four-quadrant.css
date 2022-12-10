@@ -11,39 +11,37 @@ four-q {
 }
 
 /* Four Quadrant grid */
-.four-q-grid-title {
+four-q>.quadrant {
+	border-radius: .4rem;
+	padding: .5rem;
 }
 
-four-q > #do {
+four-q>#do {
 	background-color: #7ed957;
 }
 
-four-q > #schedule {
+four-q>#schedule {
 	background-color: #38b6ff;
 }
 
-four-q > #delegate {
+four-q>#delegate {
 	background-color: #ff914d;
 }
 
-four-q > #eliminate {
+four-q>#eliminate {
 	background-color: #ff3a3a;
 }
 
-task-item button {
-    display: block;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: .5rem;
-    border: none;
-    text-align: left;
-    font-size: 1rem;
-    font-family: 'Lato';
-    border-radius: .4rem;
-    margin: .25rem 0;
+task-item {
+	display: block;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.5);
+	padding: .5rem;
+	border: none;
+	text-align: left;
+	font-size: 1rem;
+	font-family: 'Lato';
+	border-radius: .4rem;
+	margin: .25rem 0;
 	cursor: pointer;
 }
-
-.quadrant {
-	padding: .5rem;
-  }

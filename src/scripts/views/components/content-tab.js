@@ -14,8 +14,8 @@ class ContentTab extends HTMLElement {
     this.innerHTML = /* HTML */`
     <tab-group>
       <tab-title-list>
-          <tab-title active><button>Calendar</button></tab-title>
-          <tab-title><button>Four Quadrant</button></tab-title>
+          <tab-title><button>Calendar</button></tab-title>
+          <tab-title active><button>Four Quadrant</button></tab-title>
           <tab-title><button>Task List</button></tab-title>
       </tab-title-list>
       <tab-content-list>
