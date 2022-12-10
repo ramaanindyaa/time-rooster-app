@@ -23,4 +23,6 @@ function getCurrentUser() {
   });
 }
 
-export { config, firebaseApp, firebaseAuth, getCurrentUser };
+export {
+  config, firebaseApp, firebaseAuth, getCurrentUser,
+};

@@ -8,7 +8,7 @@ class FourQ extends HTMLElement {
     this.afterRender();
   }
 
-  render() {
+  async render() {
     this.innerHTML = /* HTML */ `
     <div class="four-q-title">
       <h2 >Four Quadrant</h2>
@@ -41,12 +41,13 @@ class FourQ extends HTMLElement {
     `;
   }
 
-  afterRender() {
+  async afterRender() {
     const addTaskBtn = document.getElementById('add_task');
     addTaskBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      taskManipulation.addTask();
+      taskManipulation.taskInputForm();
     });
+    console.log(this._tasks);
 
     const doElement = document.getElementById('do');
     const scheduleElement = document.getElementById('schedule');
@@ -56,7 +57,7 @@ class FourQ extends HTMLElement {
     Object.keys(this._tasks || {}).forEach((task) => {
       const taskItemElement = document.createElement('task-item');
       taskItemElement.task = this._tasks[task];
-      taskItemElement.taskKey = task;
+      taskItemElement.taskId = task;
       if (this._tasks[task].importance && this._tasks[task].urgency) {
         doElement.appendChild(taskItemElement);
       } else if (this._tasks[task].importance) {
@@ -67,11 +68,6 @@ class FourQ extends HTMLElement {
         eliminateElement.appendChild(taskItemElement);
       }
     });
-  }
-
-  renderError(message) {
-    this.innerHTML = '<h3>Four Quadrant</h3>';
-    this.innerHTML += `<h3 class="placeholder">${message}</h2>`;
   }
 }
 
