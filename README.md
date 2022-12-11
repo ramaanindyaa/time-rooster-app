@@ -23,7 +23,7 @@ Aplikasi ini memiliki beberapa fitur, seperti quadran waktu, aplikasi pelacak li
 ### Mengedit atau menghapus jadwal
 1. Login menggunakan akun google
 2. Menuju halaman **Main app**
-3. Klik `Add task`
+3. Klik `Task yang ingin di edit/delete`
 4. * Isi form yang muncul untuk mengubah jadwal
    * atau bila ingin menghapus klik `delete`
 5. Klik submit
