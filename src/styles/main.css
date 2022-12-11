@@ -17,7 +17,7 @@
   --bg-color-3: hsl(var(--hue-1), 100%, 98%);
   --bg-color-transparent: rgba(255, 255, 255, 0.6);
   --heading-color: hsl(var(--hue-1), 61%, 24%);
-  --text-color: #000000;
+  --text-color: hsl(var(--hue-1), 17%, 63%);
 }
 
 html {
@@ -818,4 +818,43 @@ header.scrolled .logo {
 #sign-in-box button {
   margin: 1rem 0;
   padding: 0.5rem 2rem;
+}
+
+#about-box {
+  max-width: calc(100vw - 2rem);
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #fff;
+  text-align: center;
+  border-radius: 0.5rem;
+  box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+}
+
+#about-box h2,
+#about-box h3 {
+  margin: .5rem 0;
+}
+
+#about-profile-box {
+  margin: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4rem 2rem;
+}
+
+.about-profile-image img {
+  border-radius: 50%;
+  width: 12rem;
+  height: 12rem;
+  object-fit: cover;
+  object-position: top;
+}
+
+.about-profile-name {
+  margin: 0.5rem;
+}
+
+.about-profile-links {
+  font-size: .825rem;
 }
