@@ -30,5 +30,12 @@ Aplikasi ini memiliki beberapa fitur, seperti quadran waktu, aplikasi pelacak li
 
 Jadwal yang ditambahkan, diedit, atau dihapus akan tersimpan dalam akun google yang terhubung.
 
+### Tips dan Warning
+User dapat meng-click tombol info yang ada di samping nama kuadran untuk mendapatkan info tentang task apa saja yang baik dimasukan ke dalam kuadran.
+Jika user memiliki time management yang buruk, misal :
+* Memiliki task di kuadran Important and Urgent yang terlalu banyak
+* Memasukan task ke kuadran Imporant tanpa menjadwalkan task
+Hal ini akan menimbulkan Warning di kuadran yang ditentukan.
+
 Firebase Test:
 https://github.com/leafAlif/time-roster-backend
