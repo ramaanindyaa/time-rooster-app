@@ -6,7 +6,7 @@
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "serve": "http-server dist --port 9000",
+    "serve": "http-server dist",
     "test": "karma start"
   },
   "keywords": [],
@@ -37,12 +37,15 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.2",
     "webpack-merge": "^5.8.0",
-    "whatwg-fetch": "^3.6.2"
+    "webpack-pwa-manifest": "^4.3.0",
+    "whatwg-fetch": "^3.6.2",
+    "workbox-webpack-plugin": "^6.5.4"
   },
   "dependencies": {
     "firebase": "^9.15.0",
     "native-html-tabs": "^0.1.4",
     "regenerator-runtime": "^0.13.11",
-    "sweetalert2": "^11.4.8"
+    "sweetalert2": "^11.4.8",
+    "workbox-window": "^6.5.4"
   }
 }

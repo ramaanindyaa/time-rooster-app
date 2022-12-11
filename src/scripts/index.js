@@ -4,6 +4,7 @@ import '../styles/main.css';
 import '../styles/responsive.css';
 import { firebaseAuth } from './utils/initialize-firebase';
 import App from './views/app';
+import swRegister from './utils/sw-register';
 
 const app = new App({
   button: document.querySelector('#hamburgerButton'),
@@ -22,4 +23,5 @@ window.addEventListener('load', () => {
     }
     app.renderPage();
   });
+  swRegister();
 });
