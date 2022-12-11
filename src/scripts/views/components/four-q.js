@@ -103,7 +103,7 @@ class FourQ extends HTMLElement {
           case 'info-do':
             Swal.fire(
               'Important and Urgent',
-              'Kuadran ini dipenuhi dengan aktivitas yang sangat mendesak dan penting atau aktivitas yang harus diselesaikan pada waktu yang sangat dekat. Bila aktivitas pada kuadran ini tidak dikerjakan sesegera mungkin, akan mendatangkan masalah di kemudian hari.',
+              'Kuadran ini dipenuhi dengan aktivitas yang sangat mendesak dan penting atau aktivitas yang harus diselesaikan pada waktu yang sangat dekat. Bila aktivitas pada kuadran ini tidak dikerjakan sesegera mungkin, akan mendatangkan masalah di kemudian hari. <br><b>Sangat direkomendasikan untuk tidak memiliki lebih dari 2 task di kuadran ini. Jika anda memiliki lebih dari 2 task berarti anda harus menyelesaikan task itu dengan sesegera mungkin.</b>',
               'info',
             );
             break;
@@ -117,7 +117,7 @@ class FourQ extends HTMLElement {
           case 'info-schedule':
             Swal.fire(
               'Important',
-              'Aktivitas pada kuadran ini tidak terlalu penting untuk diselesaikan dengan cepat. Berbeda dengan kuadran Important and Urgent, kegiatan di kuadran ini dapat ditunda sampai aktivitas di kuadran pertama selesai dikerjakan.',
+              'Aktivitas pada kuadran ini tidak terlalu penting untuk diselesaikan dengan cepat. Berbeda dengan kuadran Important and Urgent, kegiatan di kuadran ini dapat ditunda sampai aktivitas di kuadran pertama selesai dikerjakan.<br><b>Sangat direkomendasikan untuk menschedule task yang ada di kuadran ini.</b>',
               'info',
             );
             break;

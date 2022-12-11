@@ -3,7 +3,7 @@
 	--schedule-grid-color: #38b6ff;
 	--delegate-grid-color: #ff914d;
 	--eliminate-grid-color: #ff3a3a;
-	--box-shadow-warning: 0px 0px 15px 0px;
+	--box-shadow-warning: 0px 0px 5px 5px;
 }
 
 four-q {
@@ -46,7 +46,7 @@ four-q>#do {
 }
 
 four-q>#do.warning {
-	box-shadow: var(--box-shadow-warning) var(--do-grid-color);
+	animation: glow-do-warning 1s ease-in-out infinite alternate;
 }
 
 four-q>#schedule {
@@ -54,23 +54,15 @@ four-q>#schedule {
 }
 
 four-q>#schedule.warning {
-	box-shadow: var(--box-shadow-warning) var(--schedule-grid-color);
+	animation: glow-schedule-warning 1s ease-in-out infinite alternate;
 }
 
 four-q>#delegate {
 	background-color: var(--delegate-grid-color);
 }
 
-four-q>#delegate.warning {
-	box-shadow: var(--box-shadow-warning) var(--delegate-grid-color);
-}
-
 four-q>#eliminate {
 	background-color: var(--eliminate-grid-color);
-}
-
-four-q>#eliminate.warning {
-	background-color: var(--box-shadow-warning) var(--eliminate-grid-color);
 }
 
 task-item {
@@ -85,4 +77,22 @@ task-item {
 	border-radius: .4rem;
 	margin: .25rem 0;
 	cursor: pointer;
+}
+
+@keyframes glow-do-warning {
+  from {
+    box-shadow: var(--box-shadow-warning) var(--do-grid-color);
+  }
+  to {
+    box-shadow: none;
+  }
+}
+
+@keyframes glow-schedule-warning {
+  from {
+    box-shadow: var(--box-shadow-warning) var(--schedule-grid-color);
+  }
+  to {
+    box-shadow: none;
+  }
 }
