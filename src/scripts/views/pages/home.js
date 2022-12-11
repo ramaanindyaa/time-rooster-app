@@ -10,8 +10,7 @@ const Home = {
           <p class="text">Time Rooster adalah aplikasi berbasis Web yang membantu kamu untuk memanage perkerjaan kamu
             menjadi lebih mudah!</p>
           <div class="cta">
-            <a href="#" class="btn" id='btn-test'>Daftar Sekarang!</a>
-            <a href="#" class="btn secondary-btn">Login</a>
+            <a href="#/main-app" class="btn" id='btn-test'>Coba Sekarang!</a>
           </div>
         </div>
         <div class="col">
@@ -23,15 +22,11 @@ const Home = {
     <section class="services section">
       <div class="rows">
         <div class="services-info">
-          <h3 class="sub-heading">Fitur Yang Kami Tawarkan!</h3>
-          <h1 class="heading">Manage waktu kamu dengan Mudah dan terstruktur!</h1>
-          <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique temporibus
-            quisquam eaque dolorem soluta dolorum ipsam nemo quaerat ratione. Ad.</p>
-          <div class="cta">
-            <a href="#" class="btn">Daftar Sekarang!</a>
-            <a href="#" class="btn secondary-btn">Login</a>
-          </div>
+          <h1 class="heading">Manage waktu kamu dengan Mudah dengan menggunakan 4 Kuadran Manajemen Waktu!</h1>
+          <p class="text">Dengan menggunakan 4 skala kuadran aktivitas merupakan cara efektif untuk membagi pekerjaan dari terpenting sekaligus mendesak hingga tidak penting dan tidak mendesak.<br> 
+          Cara 4 kuadran ini pertama kali dicetuskan oleh Stephen Covey pada tahun 1989 dalam bukunya berjudul 7 Habits of Highly Effective People, Restoring The Character Ethic.</p>
         </div>
+
         <div class="services-grid">
           <div class="srv-card">
             <div class="card-desc">
@@ -41,6 +36,7 @@ const Home = {
             </div>
             <a href="#" class="btn secondary-btn">Jejalahi lebih lanjut</a>
           </div>
+
           <div class="srv-card">
             <div class="card-desc">
               <h3>Management Waktu</h3>
@@ -49,14 +45,7 @@ const Home = {
             </div>
             <a href="#" class="btn secondary-btn">Jejalahi lebih lanjut</a>
           </div>
-          <div class="srv-card">
-            <div class="card-desc">
-              <h3>Kalender Produktivitas</h3>
-              <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam at placeat
-                vero doloribus maiores sint!</p>
-            </div>
-            <a href="#" class="btn secondary-btn">Jejalahi lebih lanjut</a>
-          </div>
+          
           <div class="srv-card">
             <div class="card-desc">
               <h3>Kuadran Waktu</h3>
@@ -74,11 +63,6 @@ const Home = {
 
   async afterRender() {
     // Fungsi ini akan dipanggil setelah render()
-    const btnTest = document.getElementById('btn-test');
-    btnTest.addEventListener('click', (e) => {
-      e.stopPropagation();
-      alert('Button Pressed');
-    });
   },
 };
 
