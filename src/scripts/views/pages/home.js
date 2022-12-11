@@ -31,28 +31,22 @@ const Home = {
           <div class="srv-card">
             <div class="card-desc">
               <h3>Fitur Aplikasi kami</h3>
-              <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam at placeat
-                vero doloribus maiores sint!</p>
+              <p class="text">Berikut ini adalah beberapa fitur aplikasi kami. Aplikasi manajemen waktu 4 kuadran yang terintegrasi dengan Firebase.</p>
             </div>
-            <a href="#" class="btn secondary-btn">Jejalahi lebih lanjut</a>
           </div>
 
           <div class="srv-card">
             <div class="card-desc">
               <h3>Management Waktu</h3>
-              <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam at placeat
-                vero doloribus maiores sint!</p>
+              <p class="text">Bagi dan kelola waktu yang kita miliki untuk berbagai aktivitas agar memaksimalkan produktivitas. Manajemen waktu bisa membuat orang memiliki sikap yang lebih disiplin karena mampu mengerjakan tugas tertentu tepat waktu.</p>
             </div>
-            <a href="#" class="btn secondary-btn">Jejalahi lebih lanjut</a>
           </div>
           
           <div class="srv-card">
             <div class="card-desc">
               <h3>Kuadran Waktu</h3>
-              <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam at placeat
-                vero doloribus maiores sint!</p>
+              <p class="text">Kelola jadwal kamu dengan lebih efektif dengan membagi pekerjaan kamu menjadi 4 kuadran dari yang terpenting sekaligus mendesak hingga tidak penting dan tidak mendesak.</p>
             </div>
-            <a href="#" class="btn secondary-btn">Jejalahi lebih lanjut</a>
           </div>
         </div>
       </div>
