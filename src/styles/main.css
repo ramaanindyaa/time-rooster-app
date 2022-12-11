@@ -55,9 +55,10 @@ body {
 }
 
 .skip-to-content-link {
+  z-index: 999;
   background: var(--main-color-1);
   color: #fff;
-  padding: 1.25rem;
+  padding: 1rem;
   position: absolute;
   left: 50%;
   transform: translate(-50%, -100%);
