@@ -65,7 +65,7 @@ function setCalendarNav(strDate = null) {
 
   document.querySelectorAll('.day-item').forEach((item) => {
     item.addEventListener('click', () => {
-      alert(item.dataset.date);
+      // alert(item.dataset.date);
     });
   });
 }
