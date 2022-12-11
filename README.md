@@ -3,8 +3,6 @@
 Time roster merupakan aplikasi berbasis web yang membantu para pengguna untuk memanagemen waktu mereka secara efisian dimanapun dan kapanpun.
 Aplikasi ini memiliki beberapa fitur, seperti quadran waktu, aplikasi pelacak list keseharian kalian.
 
-Front-End masih dalam WIP
-
 ## Command
 
 `npm install` untuk memasang seluruh dependencies yang digunakan pada proyek.
@@ -13,6 +11,24 @@ Front-End masih dalam WIP
 
 `npm run build` Membangun proyek dalam mode production.
 
-Back-end:
-https://github.com/leafAlif/time-roster-backend
+## How to Use
 
+### Menambahkan jadwal
+1. Login menggunakan akun google
+2. Menuju halaman **Main app**
+3. Klik `Add task`
+4. Isi form yang muncul
+5. Klik submit
+
+### Mengedit atau menghapus jadwal
+1. Login menggunakan akun google
+2. Menuju halaman **Main app**
+3. Klik `Add task`
+4. * Isi form yang muncul untuk mengubah jadwal
+   * atau bila ingin menghapus klik `delete`
+5. Klik submit
+
+Jadwal yang ditambahkan, diedit, atau dihapus akan tersimpan dalam akun google yang terhubung.
+
+Firebase Test:
+https://github.com/leafAlif/time-roster-backend
