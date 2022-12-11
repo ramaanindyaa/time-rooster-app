@@ -9,22 +9,14 @@ const MainApp = {
     const user = await getCurrentUser();
     if (user) {
       return /* HTML */`
-      <a class="skip-to-content-link" href="#primary">Skip to content</a>
-
-      <main id="primary">
-        <div class="main-app-content">
-          <content-tab></content-tab>
-          <user-detail></user-detail>
-        </div>
-      </main>
+      <div class="main-app-content">
+        <content-tab></content-tab>
+        <user-detail></user-detail>
+      </div>
       `;
     }
     return /* HTML */`
-    <a class="skip-to-content-link" href="#primary">Skip to content</a>
-
-    <main id="primary">
-      <sign-in-alert></sign-in-alert>
-    </main>
+    <sign-in-alert></sign-in-alert>
     `;
   },
 
