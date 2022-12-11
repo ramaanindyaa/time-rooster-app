@@ -1,0 +1,88 @@
+:root {
+	--do-grid-color: #7ed957;
+	--schedule-grid-color: #38b6ff;
+	--delegate-grid-color: #ff914d;
+	--eliminate-grid-color: #ff3a3a;
+	--box-shadow-warning: 0px 0px 15px 0px;
+}
+
+four-q {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 10px;
+}
+
+/* Four quadrant title */
+.four-q-title {
+	grid-column: span 2;
+	display: flex;
+	justify-content: space-between;
+}
+
+/* Four quadrant grid title */
+.four-q-grid-title {
+	display: grid;
+	grid-template-columns: 1fr auto;
+}
+
+.quadrant-info {
+	background: none;
+	border: none;
+	font-size: larger;
+	min-width: 44px;
+	min-height: 44px;
+	cursor: pointer;
+}
+
+/* Four Quadrant grid */
+four-q>.quadrant {
+	border-radius: .4rem;
+	padding: .5rem;
+	box-shadow: 3px 3px 5px 0px #00000055;
+}
+
+four-q>#do {
+	background-color: var(--do-grid-color);
+}
+
+four-q>#do.warning {
+	box-shadow: var(--box-shadow-warning) var(--do-grid-color);
+}
+
+four-q>#schedule {
+	background-color: var(--schedule-grid-color);
+}
+
+four-q>#schedule.warning {
+	box-shadow: var(--box-shadow-warning) var(--schedule-grid-color);
+}
+
+four-q>#delegate {
+	background-color: var(--delegate-grid-color);
+}
+
+four-q>#delegate.warning {
+	box-shadow: var(--box-shadow-warning) var(--delegate-grid-color);
+}
+
+four-q>#eliminate {
+	background-color: var(--eliminate-grid-color);
+}
+
+four-q>#eliminate.warning {
+	background-color: var(--box-shadow-warning) var(--eliminate-grid-color);
+}
+
+task-item {
+	display: block;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.5);
+	padding: .5rem;
+	border: none;
+	text-align: left;
+	font-size: 1rem;
+	font-family: 'Lato';
+	border-radius: .4rem;
+	margin: .25rem 0;
+	cursor: pointer;
+}

@@ -1,0 +1,41 @@
+tab-title {
+  padding: .5rem;
+  border:none;
+  background-color: #ccc;
+  margin: 0 3px;
+}
+
+tab-title[active] {
+  background-color: #fff;
+  
+}
+
+tab-content-list{
+  border: none;
+  border-radius: .5rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+tab-content {
+  padding: 1rem;
+  border-radius: .5rem;
+}
+
+tab-title button {
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1rem;
+  font-family: 'Lato';
+  border-radius: .4rem;
+  margin: .25rem 0;
+	cursor: pointer;
+}
+
+user-detail {
+  background-color: #fff;
+  border-radius: .5rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 1rem;
+  height: fit-content;
+}

@@ -1,11 +1,13 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
   entry: {
     app: path.resolve(__dirname, 'src/scripts/index.js'),
-    sw: path.resolve(__dirname, 'src/scripts/sw.js'),
   },
   output: {
     filename: '[name].bundle.js',
@@ -40,5 +42,55 @@ module.exports = {
         },
       ],
     }),
+    new WebpackPwaManifest({
+      filename: 'app.webmanifest',
+      id: 'time-rooster',
+      name: 'Time Rooster App',
+      short_name: 'TRA',
+      description: 'Simple App to help you manage your time!',
+      theme_color: '#6D33FF',
+      background_color: '#ffffff',
+      scope: '/',
+      publicPath: './',
+      start_url: '/index.html',
+      crossorigin: null, // can be null, use-credentials or anonymous
+      icons: [
+        {
+          src: path.resolve('src/public/images/maskable_icon_x512.png'),
+          sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+        },
+        {
+          src: path.resolve('src/public/images/maskable_icon_x512.png'),
+          size: '750x750',
+          purpose: 'maskable',
+        },
+      ],
+    }),
+    new WorkboxWebpackPlugin.GenerateSW({
+      swDest: './sw.bundle.js',
+    }),
   ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      minSize: 20000,
+      maxSize: 70000,
+      minChunks: 1,
+      maxAsyncRequests: 30,
+      maxInitialRequests: 30,
+      automaticNameDelimiter: '~',
+      enforceSizeThreshold: 50000,
+      cacheGroups: {
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true,
+        },
+      },
+    },
+  },
 };

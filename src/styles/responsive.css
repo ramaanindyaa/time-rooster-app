@@ -1,51 +1,61 @@
 @media screen and (min-width: 650px) {
-    .app-bar {
-      grid-template-columns: 1fr auto;
-      padding: 8px 32px;
-    }
-   
-    .app-bar .app-bar-brand h1 {
-      font-size: 1.5em;
-    }
-   
-    .app-bar .app-bar-menu {
-      display: none;
-    }
-   
-    .app-bar .app-bar-navigation {
-      position: static;
-      width: 100%;
-    }
-   
-    .app-bar .app-bar-navigation ul li {
-      display: inline-block;
-    }
-   
-    .app-bar .app-bar-navigation ul li a {
-      display: inline-block;
-      text-align: center;
-      margin: 0;
-    }
+  .main-app-content {
+    grid-template-columns: 1fr .4fr;
   }
-   
-  @media screen and (min-width: 800px) {
-    .app-bar .app-bar-brand h1 {
-      font-size: 2em;
-    }
+  
+  .app-bar {
+    grid-template-columns: 1fr auto;
+    padding: 8px 32px;
   }
-   
-  @media screen and (max-width: 768px) {
-    .rows {
-        flex-direction: column;
-    }
 
-    #showcase .rows {
-        flex-direction: column-reverse;
-    }
-
-    .skills-wrap {
-        text-align: center;
-        justify-content: center;
-        grid-template-columns: none;
-    }
+  .app-bar .app-bar-brand h1 {
+    font-size: 1.5em;
   }
+
+  .app-bar .app-bar-menu {
+    display: none;
+  }
+
+  .app-bar .app-bar-navigation {
+    position: static;
+    width: 100%;
+  }
+
+  .app-bar .app-bar-navigation ul li {
+    display: inline-block;
+  }
+
+  .app-bar .app-bar-navigation ul li a {
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .app-bar .app-bar-brand h1 {
+    font-size: 2em;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .calendar-month {
+    gap: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .rows {
+    flex-direction: column;
+  }
+
+  #showcase .rows {
+    flex-direction: column-reverse;
+  }
+
+  .skills-wrap {
+    text-align: center;
+    justify-content: center;
+    grid-template-columns: none;
+  }
+}
